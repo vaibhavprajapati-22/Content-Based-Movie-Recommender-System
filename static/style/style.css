@@ -1,0 +1,358 @@
+body 
+{
+    background-color: #0d0c0c;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@font-face 
+{
+    font-family: 'Goldman-Bold';
+    src: url('../fonts/Goldman-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.logo-container 
+{
+    display: flex;
+    align-items: center;
+    margin-top: 0%;
+}
+
+.logo 
+{
+    width: 5%; 
+    height: auto; 
+    margin-top: 1%;
+    margin-left: 4%;
+    position: relative;
+    cursor: pointer;
+}
+
+.logo_name 
+{
+    color: #ffffff; 
+    font-size: 2em;
+    font-family: 'Goldman-Bold', serif;
+    margin-top: 2%;
+    margin-left: 1.5%;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.info_moviee_
+{
+    text-align: center;
+}
+@font-face 
+{
+    font-family: 'Goldman-Regular';
+    src: url('../fonts/Goldman-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.info_moviee 
+{
+    color: white; 
+    font-size: 275%; 
+    line-height: 1.5; 
+    margin-top: 5%;
+    margin-left: 3%;
+    margin-right: 3%;
+    font-family: 'Goldman-Regular';
+}
+
+.get_started
+{
+    text-align: center; 
+    margin-top: 8%;
+}
+.Get_Started 
+{
+    padding: 10px 20px; 
+    font-size: 250%;
+    background-color: #0d0c0c; 
+    color: #FFFFFF; 
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    margin: 0 10px; 
+    cursor: pointer;
+    transition: background-color 0.3s; 
+}
+.Get_Started:hover 
+{
+    background-color: #c42222; 
+}
+
+#search 
+{
+    text-align: center;
+    margin-top: 2%;
+}
+#searchInput 
+{
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+#search input[type="text"]
+{
+    padding: 10px;
+    width: 225px;
+    background-color: #0d0c0c;
+    color:#FFFFFF;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#search input[type="submit"] 
+{
+    padding: 10px 20px;
+    background-color: #f13333;
+    font-size: 100%;
+    color: #fff;
+    border: 1px solid #FFFFFF;
+    border-radius: 1000px;
+    cursor: pointer;
+}
+#search input[type="submit"]:hover 
+{
+    background-color: #2c2b2b;
+}
+#searchSuggestions 
+{
+    display: none;
+    position: absolute;
+    border: 1px solid #ccc;
+    background-color: #0d0c0c;
+    color: white;
+    max-height: 27%;
+    overflow-y: auto;
+    width: 23%;
+    box-sizing: border-box;
+    left: 50%;
+    transform: translate(-50%);
+}
+#searchSuggestions li 
+{
+    list-style-type: none;
+    padding: 3%;
+    cursor: pointer;
+}
+#searchSuggestions li:hover 
+{
+    background-color: #343434;
+}
+
+#movieListContainer
+{
+    color: white;
+}
+#currentPage
+{
+    font-size: 200%;
+}
+#movieNames
+{
+    color: yellow;
+}
+
+#pagination
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#movieNames 
+{
+    column-count: 3;
+    column-gap: 4%;
+    list-style-type: none; 
+    padding: .5%;
+}
+#movieNames li { 
+    margin-bottom: 3%; 
+    display: inline-flexbox;
+}
+#box_movie_name 
+{
+ 
+    padding: 10px; 
+    text-align: center;
+    font-size: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 10%;
+    margin: 1%;
+    background: linear-gradient(to right, #ff0000, #8b0000);
+    color: white;
+    cursor: pointer;
+}
+
+#prevButton,
+#nextButton 
+{
+    padding: 10px 20px;
+    background-color: #d61a1a;
+    font-size: 100%;
+    color: #fff;
+    border: 1px solid #FFFFFF;
+    border-radius: 1000px;
+    cursor: pointer;
+    margin: 5%;
+    display: flex;
+    align-items: center;
+}
+#prevButton::before 
+{
+    content: '\2190'; 
+    margin-right: 5px;
+}
+#nextButton::after {
+    content: '\2192'; 
+    margin-left: 5px;
+}
+
+#seach_result
+{
+    font-size: 250%;
+    color: #FFFFFF; 
+    text-align: center;
+}
+
+#result_con
+{
+    column-count: 3;
+    column-gap: 4%;
+    list-style-type: none; 
+    padding: .5%;
+    margin-top: 8%;
+}
+.result-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-around;
+}
+.result-container {
+    flex: 0 0 calc(30% - 2%); 
+    box-sizing: border-box; 
+    padding: 10px;
+    text-align: center;
+    font-size: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 10%;
+    margin: 1%;
+    background: linear-gradient(to right, #ff0000, #8b0000);
+    color: white;
+    cursor: pointer;
+}
+
+#Recommended
+{
+    color: white;
+    text-align: right;
+    margin-right: 1%;
+    margin-top: -40.5%;
+    font-family: sans-serif;
+}
+
+.home
+{
+    text-align: right; 
+    margin-top: -9.75%;
+    margin-right: 1.5%;
+}
+.Go_home
+{
+    padding: 10px 20px; 
+    font-size: 100%;
+    background-color: #0d0c0c; 
+    color: #FFFFFF; 
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    margin: 0 10px; 
+    cursor: pointer;
+    transition: background-color 0.3s; 
+}
+.Go_home:hover 
+{
+    background-color: #2c2b2b; 
+}
+
+.Home {
+    text-align: right;
+    margin-top: -7%; 
+    margin-right: 1.5%;
+}
+
+.Go_Home {
+    padding: 10px 20px;
+    font-size: 100%;
+    background-color: #0d0c0c;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.Go_Home:hover {
+    background-color: #2c2b2b;
+}
+
+#recommended_Names 
+{
+    column-count: 1;
+    list-style-type: none; 
+    padding: .5%;
+    margin-top: 4%;
+    margin-left: 76%;
+}
+#recommended_Names li {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-around;
+    margin-top: 3%;
+}
+#box_movie_name1 {
+    width: 95%;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    font-size: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 10%;
+    margin: 1% auto; 
+    background: linear-gradient(to right, #ff0000, #8b0000);
+    color: white;
+    cursor: pointer;
+}
+
+footer 
+{
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+.footer_img
+{
+    width: 5%; 
+    height: auto; 
+    margin-top: 1%;
+    margin-left: 4%;
+    position: relative;
+    cursor: pointer;
+}
+.footer_name
+{
+    color: #ffffff; 
+    font-size: 2em;
+    font-family: 'Goldman-Bold', serif;
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    top: -20px;
+}

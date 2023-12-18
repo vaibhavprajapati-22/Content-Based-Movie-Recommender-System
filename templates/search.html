@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>{% block title %}{{title}}{% endblock %}</title>
+    <link rel="stylesheet" href="../static/style/style.css">
+</head>
+<body>
+    <div class="logo-container">
+        <img class="logo" src="../static/images/logo.png" alt="logo" onclick="reloadPage()">
+        <span class="logo_name" onclick="reloadPage()">MovieeMagnet</span>
+    </div>
+    <h1 id="seach_result">Search Results</h1>
+    <div class="home">
+        <button class="Go_home" onclick="goHome()">Home</button>
+    </div>
+    <form class="play_click_movie" action="/play_movie.html" method="GET">
+        <div id="result" >
+            {% if matching_movies %}
+            <ul id="result_con">
+                {% for movie in matching_movies %}
+                    <li class="result-container" onclick="PLAY_click_movie(this)">{{ movie }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p id="result_con" class="result-container">No matching movies found.</p>
+        {% endif %}
+        </div>
+    </form>
+    <footer>
+        <img class="footer_img" src="../static/images/logo.png" alt="logo" onclick="goHome()">
+        <span class="footer_name" onclick="goHome()">MovieeMagnet</span>
+        <p>&copy; 2023 MovieeMagnet. All rights reserved.</p>
+    </footer>
+    <script src="../static/scripts/script.js"></script>
+</body>
+</html>

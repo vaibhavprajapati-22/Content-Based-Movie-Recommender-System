@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <title>MovieeMagnet</title>
+        <link rel="stylesheet" href="../static/style/style.css">
+    </head>
+    <body>
+        <div class="logo-container">
+            <img class="logo" src="../static/images/logo.png" alt="logo" onclick="reloadPage()">
+            <span class="logo_name" onclick="reloadPage()">MovieeMagnet</span>
+        </div>
+        <div class="info_moviee_">
+            <p class="info_moviee">
+                Experience a spectrum of emotions with MovieeMagnet - from laughter to tears, and thrilling moments that captivate your every emotion. Dive into a world of entertainment and discovery.
+            </p>
+        </div>
+        <div class="get_started">
+            <button class="Get_Started" onclick="scrollDown()">Get Started</button>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br id="move_here">
+        <form id="search" action="{{ url_for('search') }}" method="GET" target="_blank">
+            <input type="text" id="searchInput" name="query" placeholder="Movie, Drama, Web series name..", autocomplete="off">
+            <input type="submit" value="Search" onclick="clearSearchInput()">
+            <ul id="searchSuggestions" onclick="clearSearchInput()"></ul>
+        </form>
+        <br>
+        <div id="movieListContainer">
+            <ul id="movieNames">
+                {% for movie_name in movie_names %}
+                <form class="movieForm" action="/play_movie.html" method="GET">
+                    <input type="hidden" name="movie" id="movieInput" value="{{ movie_name }}">
+                    <li id="box_movie_name" onclick="submitPlayMovieForm(this)">
+                        {{ movie_name }}
+                    </li>
+                </form>
+                {% endfor %}
+            </ul>
+            <form id="paginationForm" action="/" method="GET">
+                <div id="pagination">
+                    <button id="prevButton" type="button" onclick="showPreviousPage()">Previous</button>
+                    <input type="hidden" id="currentPageInput" name="page" value="{{ current_page }}">
+                    <span id="currentPage">{{ current_page }}</span>
+                    <button id="nextButton" type="button" onclick="showNextPage()">Next</button>
+                </div>
+            </form>
+        </div>
+        <footer>
+            <img class="footer_img" src="../static/images/logo.png" alt="logo" onclick="goHome()">
+            <span class="footer_name" onclick="goHome()">MovieeMagnet</span>
+            <p>&copy; 2023 MovieeMagnet. All rights reserved.</p>
+        </footer>
+        <script>
+            var current_page = {{ current_page }};
+        </script>
+        <script src="../static/scripts/script.js"></script>
+    </body>
+</html>

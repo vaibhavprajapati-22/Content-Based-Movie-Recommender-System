@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <title>{% block movie_name %}{{movie_name}}{% endblock %}</title>
+    <link rel="stylesheet" href="../static/style/style.css">
+</head>
+<body>
+    <div class="logo-container">
+        <img class="logo" src="../static/images/logo.png" alt="logo" onclick="reloadPage()">
+        <span class="logo_name" onclick="reloadPage()">MovieeMagnet</span>
+    </div>
+    <video width="75%" height="auto" controls autoplay>
+        <source src="../static/videos/video.mp4" type="video/mp4">
+    </video>
+    <h1 id="Recommended">
+        Recommended Movies
+    </h1>
+
+    <div class="Home">
+        <button class="Go_Home" onclick="goHome()">Home</button>
+    </div>
+    <ul id="recommended_Names">
+        {% for movie_name in recommendations %}
+        <form class="movieForm" action="/play_movie.html" method="GET">
+            <input type="hidden" name="movie" id="movieInput" value="{{ movie_name }}">
+            <li id="box_movie_name1" onclick="submitPlayMovieForm(this)">
+                {{ movie_name }}
+            </li>
+        </form>
+        {% endfor %}
+    </ul>
+    <br>
+    <br>
+    <br>
+    <footer>
+        <img class="footer_img" src="../static/images/logo.png" alt="logo" onclick="goHome()">
+        <span class="footer_name" onclick="goHome()">MovieeMagnet</span>
+        <p>&copy; 2023 MovieeMagnet. All rights reserved.</p>
+    </footer>
+    <script src="../static/scripts/script.js"></script>
+</body>
+</html>
