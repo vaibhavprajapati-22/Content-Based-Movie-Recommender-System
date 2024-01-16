@@ -4,7 +4,7 @@ This repository contains the code and resources for a Content-Based Movie Recomm
 To get started, follow these steps:
 1. Clone the repository:
   ```sh
-  git clone https://github.com/your-username/content-based-movie-recommender.git
+  git clone https://github.com/vaibhavprajapati-22/content-based-movie-recommender.git
   cd content-based-movie-recommender
   ```
 2. Install the required dependencies:
