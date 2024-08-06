@@ -23,8 +23,8 @@ def get_movie_recommendations(movie_title):
     return similar_movies
 
 with open('similarity_matrix.pkl', 'wb') as file:
-        pickle.dump(similarity, file)
-        
+    pickle.dump(similarity, file)
+
 app = Flask(__name__)
 
 all_movie_names = open('movies.txt','r', encoding='utf-8').readlines()
